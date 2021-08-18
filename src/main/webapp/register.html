@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+var hospitalsByCity = {
+ajara: ["rh ajara","fernandes hospital","jijabai arogyadham"],
+kolhapur: ["chatrapati pramila raje hospital","sunrise","apple saraswati"],
+sawantwadi: ["sub district hospital sawantwadi","yashraj hospital"]
+}
+function makeSubmenu(value) {
+if(value.length==0) document.getElementById("hospitalSelect").innerHTML = "<option></option>";
+else {
+var hospitalsOptions = "";
+for(hospitalId in hospitalsByCity[value]) {
+hospitalsOptions+="<option>"+hospitalsByCity[value][hospitalId]+"</option>";
+}
+document.getElementById("hospitalSelect").innerHTML = hospitalsOptions;
+}
+}
+function displaySelected() { var city = document.getElementById("citySelect").value;
+var hospital = document.getElementById("hospitalSelect").value;
+alert(city+"\n"+hospital);
+}
+function resetSelection() {
+document.getElementById("citySelect").selectedIndex = 0;
+document.getElementById("hospitalSelect").selectedIndex = 0;
+}
+
+</script>
+</head>
+<body style = "background-image: url('aaa.png')">
+
+ 
+
+
+<div class="jumbotron text-center w3-display-middle">
+<form action = "reg" method="post">
+
+	<input type= "text" placeholder="Enter Your First Name" name = "fname">
+		<br><br>	
+	<input type= "text" placeholder="Enter Your Last Name" name = "lname">
+	<br><br>
+	<input type = "text" placeholder="Enter Your 12 Digit Adhar Number" name = "adharno">
+	<br><br>
+	<input type = "number" placeholder = "Enter Your Age" name = "age">
+	<br><br><select id="citySelect" name = "city" size="1" onchange="makeSubmenu(this.value)">
+<option value="" disabled selected>Choose City</option>
+<option>ajara</option>
+<option>kolhapur</option>
+<option>sawantwadi</option>
+</select>
+<br><br>
+<select id="hospitalSelect" size="1" name = "hospital">
+<option value="" disabled selected>Choose hospital</option>
+<option></option>
+<br><br>
+</select><br><br>
+<button type = "submit" class = "btn btn-success" onclick="alert('Your slot has been successfully registered.')">Register</button>
+</form>
+</div>
+</body>
+</html>
