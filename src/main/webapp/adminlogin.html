@@ -14,14 +14,16 @@
 </head>
 <body style = "background-image : url('aaa.png')">
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br>
 <div class="jumbotron text-center w3-display-middle">
 <div class= "w3-display-middle">
 
 
 	<form action = "adminloginservlet" method = "Post">
 	<input type = "text" placeholder = "Enter Admin User Id" name="uname"><br><br>
-	<input type = "password" placeholder = "Enter Admin Password" name="pword"><br><br>
+	
+	<input type="password" placeholder = "Enter Admin Password" name="pword" style="-webkit-text-security: square;" /><br><br>
+	<!-- <input type = "password" placeholder = "Enter Admin Password" name="pword"><br><br> -->
 	<button type = "submit" class = "btn btn-danger">done</button>
 	</form>
 </div></div>
